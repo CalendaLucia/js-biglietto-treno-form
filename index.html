@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Calcolo del prezzo del biglietto del treno</title>
+</head>
+<body>
+
+    <header>
+        <section id="container">
+           <div class="myheader">
+              <div class="mytitle">
+                 <h1>Calcola il prezzo del treno</h1>
+              </div>
+              <div class="myimg">
+                 <img src="img/MyTrain.png" alt="trainLogo">
+              </div>
+           </div>
+        </section>
+    </header>
+
+    <main>
+        <section id="generator-ticket">
+            <div class="myrow">
+               <form id="survey-form" action="#" method="post">
+                    <div class="form">
+                      <label class="mylabel" for="name">Nome e Cognome</label>
+                      <input type="text" id="name" name="name" placeholder="Scrivi il tuo nome e cognome..." required> 
+                    </div>
+                    <div class="form">
+                       <label class="mylabel" for="km">Chilomentri percorsi</label>
+                       <input type="text" id="km" name="km" placeholder="Scrivi qui i Chilomentri percorsi..." required>
+                    </div>
+                    <div class="form">
+                        <label class="mylabel" for="age">Fascia età</label>
+                        <select name="age" id="age" required>
+                          <option disabled selected value>Seleziona</option>
+                          <option value="maggiorenne">Maggiorenne</option>
+                          <option value="minorenne">Minorenne</option>
+                          <option value="over65">Over_65</option>
+                       </select>
+                      </div>
+                </form>
+                <div class="mybutton">
+                    <button>
+                        Genera
+                    </button>
+                    <button>
+                        Annulla
+                      </button>
+                  </div>
+            </div>
+        </section>
+
+        <section id="generator-ticket">
+            <div class="myticket">
+                <div class="name-passengers">
+                    <h3>Dettagli Passeggero</h3>
+                </div>
+                <div class="ticket">
+                     <div class="card-name">
+                        <h3>Nome Passeggero</h3>
+                        <h4>Nome random</h4>
+                     </div>
+                     
+                     <!-- START TABLE TICKET -->
+                      <table>
+                        <thead>
+                            <tr>
+                                <th>Offerta</th>
+                                <th>Carrozza</th>
+                                <th>Codice CP</th>
+                                <th>Costo Biglietto</th>
+                              </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Biglietto Standard</td>
+                                <td>5</td>
+                                <td>cifra random</td>
+                                <td>cifra random</td>
+                              </tr>
+                        </tbody>
+                       
+                       
+                      </table>
+                </div>
+               
+            </div>
+            
+        </section>
+    </main>
+
+    
+
+    <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>
