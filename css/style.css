@@ -67,6 +67,9 @@ h1 {
     width: 80%;
     margin: 0 auto;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
    
 }
 
@@ -78,11 +81,6 @@ h1 {
 
 }
 
-.mybutton {
-    width:80% ;
-    margin: 0 auto;
-    text-align: center;
-}
 
 .mylabel {
     display: block;
@@ -100,6 +98,7 @@ input, select {
     border-radius: 10px;
     border: none;
     padding: 5px 10px;
+  
 }
 
 ::placeholder {
@@ -107,7 +106,11 @@ input, select {
     font-family: 'Indie Flower', cursive;
 }
 
-.mybutton button {
+.mybutton {
+    padding: 20px ;
+}
+
+#submitButton, #returnButton {
     border-radius:10px;
     background: transparent;
     color: white;
@@ -132,11 +135,10 @@ p {
 } 
 
 .myticket {
-  
     border-radius: 10px;
     padding: 1.8em;
-    width: 80%;
-    margin: 0 auto;
+    width: 50%;
+
 
 }
 
@@ -174,6 +176,7 @@ tbody, td {
 
 .ticket {
     display: flex;
+
 }
 
 .card-name {
@@ -186,4 +189,15 @@ tbody, td {
 h4 {
     font-size: 18px;
     margin-left: 5px;
+}
+
+h3 {
+   
+    font-size: 30px;
+    padding: 10px 45px;
+}
+
+#name-passengers {
+    padding: 10px 50px;
+    font-size: 20px
 }
