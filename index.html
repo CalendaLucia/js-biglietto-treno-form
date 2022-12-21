@@ -25,14 +25,14 @@
     <main>
         <section id="generator-ticket">
             <div class="myrow">
-               <form id="survey-form" action="#" method="post">
+             
                     <div class="form">
                       <label class="mylabel" for="name">Nome e Cognome</label>
-                      <input type="text" id="name" name="name" placeholder="Scrivi il tuo nome e cognome..." required> 
+                      <input type="text" id="name" name="name" value="name" placeholder="Scrivi il tuo nome e cognome..." required> 
                     </div>
                     <div class="form">
-                       <label class="mylabel" for="km">Chilomentri percorsi</label>
-                       <input type="text" id="km" name="km" placeholder="Scrivi qui i Chilomentri percorsi..." required>
+                       <label class="mylabel" for="chilomentri">Chilomentri percorsi</label>
+                       <input  type="number" id="chilometri" name="km" placeholder="Scrivi qui i Chilomentri percorsi..." required>
                     </div>
                     <div class="form">
                         <label class="mylabel" for="age">Fascia età</label>
@@ -43,27 +43,24 @@
                           <option value="over65">Over_65</option>
                        </select>
                       </div>
-                </form>
-                <div class="mybutton">
-                    <button>
-                        Genera
-                    </button>
-                    <button>
-                        Annulla
+                      <button type="button" id="submitButton">
+                        genera
                       </button>
-                  </div>
+               
+               
+                
             </div>
         </section>
 
-        <section id="generator-ticket">
+        <section id="ticket">
             <div class="myticket">
-                <div class="name-passengers">
+                <div >
                     <h3>Dettagli Passeggero</h3>
                 </div>
                 <div class="ticket">
                      <div class="card-name">
                         <h3>Nome Passeggero</h3>
-                        <h4>Nome random</h4>
+                        <h4 id="name-passengers"></h4>
                      </div>
                      
                      <!-- START TABLE TICKET -->
@@ -78,10 +75,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Biglietto Standard</td>
-                                <td>5</td>
-                                <td>cifra random</td>
-                                <td>cifra random</td>
+                                <td id="sconto">Biglietto Standard</td>
+                                <td id="carrozza"></td>
+                                <td id="cp"></td>
+                                <td id="result"></td>
                               </tr>
                         </tbody>
                        
