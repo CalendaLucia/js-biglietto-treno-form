@@ -31,7 +31,7 @@ function() {
       document.getElementById("carrozza").innerHTML=Math.round(Math.random()*10+1);
       document.getElementById("cp").innerHTML=Math.round(Math.random()*9000+1);
       document.getElementById("result").innerHTML = prezzoUnder_18.toFixed(2)  + "€";
-      document.getElementById("name-passengers").innerHTML = nome.value;
+      document.getElementById("name-passengers").innerHTML = nomeMaiuscolo;
       
 }
    else if (age.value == 'over65') {
@@ -39,7 +39,7 @@ function() {
      document.getElementById("carrozza").innerHTML=Math.round(Math.random()*10+1);
      document.getElementById("cp").innerHTML=Math.round(Math.random()*9000+1);
      document.getElementById("result").innerHTML = prezzoOver_65.toFixed(2)  + "€";
-     document.getElementById("name-passengers").innerHTML = nome.value;
+     document.getElementById("name-passengers").innerHTML = nomeMaiuscolo;
 
 }
 
