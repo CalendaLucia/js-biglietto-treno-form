@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Calcolo del prezzo del biglietto del treno</title>
+    <title>Ticket Train</title>
 </head>
 <body>
 
@@ -24,42 +24,42 @@
 
     <main>
         <section id="generator-ticket">
-            <div class="myrow">
-             
-                    <div class="form">
-                      <label class="mylabel" for="name">Nome e Cognome</label>
-                      <input type="text" id="name" name="name" value="name" placeholder="Scrivi il tuo nome e cognome..." required> 
-                    </div>
-                    <div class="form">
-                       <label class="mylabel" for="chilomentri">Chilomentri percorsi</label>
-                       <input  type="number" id="chilometri" name="km" placeholder="Scrivi qui i Chilomentri percorsi..." required>
-                    </div>
-                    <div class="form">
-                        <label class="mylabel" for="age">Fascia età</label>
-                        <select name="age" id="age" required>
-                          <option disabled selected value>Seleziona</option>
-                          <option value="maggiorenne">Maggiorenne</option>
-                          <option value="minorenne">Minorenne</option>
-                          <option value="over65">Over_65</option>
-                       </select>
-                      </div>
-                      <div class="mybutton">
-                        <button type="button" id="submitButton">
-                            Genera
-                          </button>
-                          <button type="button" id="returnButton">
-                            Annulla
-                          </button>
-                      </div>
-            </div>
+           <div class="myrow">
+              <span class="borderline"></span>
+              <form action="#">
+                <div class="box">
+                    <label class="mylabel" for="name">Nome e Cognome</label>
+                    <input type="text" id="name" name="name"  required> 
+                    <i></i>
+                </div>
+               
+                <div class="box">
+                    <label class="mylabel" for="chilomentri">Chilometri percorsi</label>
+                    <input  type="number" id="chilometri" name="km"  required>
+                     <i></i>
+                </div>
+                <div class="box"> 
+                    <select name="age" id="age" required>
+                        <option disabled selected value>Seleziona età</option>
+                        <option value="maggiorenne">Maggiorenne</option>
+                        <option value="minorenne">Minorenne</option>
+                        <option value="over65">Over_65</option>
+                    </select>
+                     <i></i>
+                </div>
+                 <input id="submitButton" type="button" value="Genera">
+                 <input id="returnButton" type="button" value="Annulla">
+              </form>
+           </div>
         </section>
 
         <section id="ticket">
             <div class="myticket">
-                <div >
-                    <h3>Dettagli Passeggero</h3>
+                <div class="trainTicket" >
+                    <h3>TRAIN TICKET</h3>
                 </div>
                 <div class="ticket">
+                    
                      <div class="card-name">
                         <h3>Nome Passeggero</h3>
                         <h4 id="name-passengers"></h4>
@@ -77,10 +77,10 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td id="sconto">Biglietto Standard</td>
-                                <td id="carrozza"></td>
-                                <td id="cp"></td>
-                                <td id="result"></td>
+                                <td class="mytd" id="sconto">Biglietto Standard</td>
+                                <td class="mytd" id="carrozza"></td>
+                                <td class="mytd" id="cp"></td>
+                                <td class="mytd" id="result"></td>
                               </tr>
                         </tbody>
                        

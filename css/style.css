@@ -7,17 +7,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Nixie+One&family=Poppins:wght@100&display=swap');
 
 body{
-    background-image: linear-gradient(
-         115deg,rgba(58, 58, 158, 0.8),
-         rgba(136, 136, 206, 0.7));
-    
+    background-color: #0c2340;
    }
 
  #container, #generator-ticket {
-    background-image: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
     padding: 20px 0px;
     margin-top: 20px;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 
 .myheader {
@@ -25,10 +24,11 @@ body{
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 25px;
     line-height: 35px;
     text-align: center;
-    background: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+    text-indent: -1px;
+    background: linear-gradient(to right, #2dc2ec 0%, #5d4157 100%);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     font-family: 'Indie Flower', cursive;
@@ -37,12 +37,14 @@ h1 {
 }
 
 .mytitle {
-    margin-left:20px;
+    margin-left:150px;
     background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
     padding: 50px 20px;
     width: 200px;
     height: 200px;
     border-radius: 50%;
+    -webkit-box-shadow: 3px -2px 50px 13px rgba(255,255,255,0.82); 
+box-shadow: 3px -2px 50px 13px rgba(255,255,255,0.82);
 }
 
 .myimg {
@@ -50,8 +52,9 @@ h1 {
     height: 400px;
     border-radius: 50%;
     position: absolute;
-    top:  0px;
+    top:  10px;
     right: 0px;    
+    z-index: 3;
 }
 
 .myimg img {
@@ -59,113 +62,211 @@ h1 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-
 }
-
 
 .myrow {
-    width: 80%;
-    margin: 0 auto;
-    border-radius: 30px;
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+ 
+}
+
+.myrow form {
+    position: absolute;
+    inset: 4px;
+    background: #222;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
     display: flex;
     flex-direction: column;
-    align-items: center;
-   
 }
-
-#survey-form {
-    background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
-    border-radius: 10px;
-    padding: 1.8em;
-    text-align: center;
-
-}
-
 
 .mylabel {
-    display: block;
-    text-align: center;
-    padding: 10px 0px;
-    font-size: 23px;
-    background: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-family: 'Indie Flower', cursive;
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    pointer-events: none;
+    transition: 0.5s;
+    font-size: 1em;
+    letter-spacing: 0.5em;
+    color: rgb(157, 154, 154);
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    margin-top: 35px
+}
+
+#generator-ticket {
+    overflow: hidden;
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background-color: #23242a;
+}
+
+#generator-ticket::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f3ff, #45f3ff);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+}
+
+#ticket {
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+#generator-ticket::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, transparent, #45f3ff, #45f345);
+    z-index: 1;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s;
+}
+
+.borderline {
+    position: absolute;
+    top: 0;
+    inset: 0;
+}
+
+.borderline::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770,#ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -1.5s;
+}
+
+.borderline::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    transform-origin: bottom right;
+    background: linear-gradient(0deg, transparent, transparent, #ff2770, #ff2770,#ff2770);
+    z-index: 1;
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -4.5s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 input, select {
-    font-size: 1rem;
-    border-radius: 10px;
-    border: none;
-    padding: 5px 10px;
-  
-}
-
-::placeholder {
-    font-size: 12px;
-    font-family: 'Indie Flower', cursive;
-}
-
-.mybutton {
-    padding: 20px ;
-}
-
-#submitButton, #returnButton {
-    border-radius:10px;
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
     background: transparent;
-    color: white;
-    padding: 0px 10px;
-    font-size: 20px;
-     background: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-     cursor: pointer;
-     box-shadow: 10px 20px 50px 15px;
-     font-family: 'Indie Flower', cursive;
+    outline: none;
+    box-shadow: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+    border: none;
 }
 
-p {
-    background: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
-    -webkit-text-fill-color: transparent;
-    -webkit-background-clip: text;
-    font-size: 20px;
-    padding: 10px 0px;
-    margin-top: 20px;
-    z-index: 999;
-} 
+select:first-child {
+     transition: 0.5s;
+    font-size: 1em;
+    letter-spacing: 0.5em;
+    color: rgb(157, 154, 154);
+}
+
+input:valid ~ .mylabel,
+input:focus ~ .mylabel {
+       color: #fff;
+       font-size: 0.75em;
+       transform: translateY(-34px);
+}
+
+.box i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+input:valid ~ i,
+input:focus ~ i {
+    height:44px ;
+}
+
+input[type="button"], 
+input[type="button"] {
+    border: none;
+    outline: none;
+    padding: 9px 25px;
+    background: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100px;
+    margin-top: 10px;
+}
+
+input[type="button"]:active,
+input[type="button"]:active {
+    opacity: 0.8;
+}
 
 .myticket {
-    border-radius: 10px;
-    padding: 1.8em;
-    width: 50%;
-
-
+    padding: 2.0em;
+    width: 60%;
+    margin: 0 auto;
+    -webkit-box-shadow: 5px 5px 5px 0px #a7a5a5, inset 4px 4px 15px 0px #000000, 3px -2px 50px 13px rgba(202,202,202,0); 
+    box-shadow: 5px 5px 5px 0px #000000, inset 4px 4px 15px 0px #000000, 3px -2px 50px 13px rgba(202,202,202,0);
 }
 
-table {
-    border-bottom:1px solid black ;
-    border-top: 1px solid black;
+thead, th {
+    padding: 0px 10px;
 }
 
-table, td {
-   margin: 0 auto;
-}
-
-table th {
-    padding: 10px 40px;
-    text-align: start;
-}
-
-tbody, td {
-    padding: 10px 40px;
-}
-
-#special {
-    background-color: #5d4157;
-}
-
-#name-random {
-    background-color: #5d4157;
+.mytd {
+    padding: 0px 40px;
+    text-align: center;
 }
 
 .name-passengers {
@@ -174,25 +275,33 @@ tbody, td {
     font-size: 25px;
 }
 
+.trainTicket {
+    width: 100%;
+    background: #003152;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    color: white;
+}
+
 .ticket {
     display: flex;
-
+     background: #5888ae;  
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 10px 0px;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-name {
-    background: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
-    padding: 10px 15px;
-    margin-left: 40px;
-    font-size: 20px;
-}
-
-h4 {
-    font-size: 18px;
-    margin-left: 5px;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 20px 0px;
 }
 
 h3 {
-   
     font-size: 30px;
     padding: 10px 45px;
 }

@@ -1,12 +1,13 @@
-
+const submitButton = document.getElementById("submitButton");
 submitButton.addEventListener("click",
 function() {
 
   // VARIABILI PRINCIPALI
   const nome = document.getElementById("name");
+  const nomeMaiuscolo = nome.value.toUpperCase();
   const km = document.getElementById("chilometri");
   const age= document.getElementById("age");
-  const submitButton = document.getElementById("submitButton");
+
 
   const prezzoFinale = parseInt( km.value * 0.21 )  ;
   const scontoUnder_18 = prezzoFinale  / 100 * 20 ;
@@ -21,21 +22,7 @@ function() {
     document.getElementById("carrozza").innerHTML=Math.round(Math.random()*10+1);
     document.getElementById("cp").innerHTML=Math.round(Math.random()*9000+1);
     document.getElementById("result").innerHTML = prezzoFinale.toFixed(2)  + "€";
-    document.getElementById("name-passengers").innerHTML = nome.value;
-
-    // if ((nome.value == "") || (nome.value == "undefined")) {
-    //            alert("Devi inserire un nome");
-    //            nome.value.focus();
-    //            return false;
-    //         }
-
-    //         if ((isNaN()) || (km.value == "") ) {
-    //                    alert("Devi inserire i chilometri percorsi, attenzione deve essere numerico!");
-    //                    km.value = "";
-    //                    km.focus();
-    //                    return false;
-    //                 }
-
+    document.getElementById("name-passengers").innerHTML = nomeMaiuscolo;
                    
 }
 
@@ -45,19 +32,6 @@ function() {
       document.getElementById("cp").innerHTML=Math.round(Math.random()*9000+1);
       document.getElementById("result").innerHTML = prezzoUnder_18.toFixed(2)  + "€";
       document.getElementById("name-passengers").innerHTML = nome.value;
-
-    //   if ((nome.value == "") || (nome.value == "undefined")) {
-    //     alert("Devi inserire un nome");
-    //     nome.value.focus();
-    //     return false;
-    //  }
-
-    //  if ((isNaN()) || (km.value == "") )  {
-    //             alert("Devi inserire i chilometri percorsi, attenzione deve essere numerico!");
-    //             km.value = "";
-    //             km.focus();
-    //             return false;
-    //          }
       
 }
    else if (age.value == 'over65') {
@@ -66,19 +40,6 @@ function() {
      document.getElementById("cp").innerHTML=Math.round(Math.random()*9000+1);
      document.getElementById("result").innerHTML = prezzoOver_65.toFixed(2)  + "€";
      document.getElementById("name-passengers").innerHTML = nome.value;
-
-  //    if ((nome.value == "") || (nome.value == "undefined")) {
-  //     alert("Devi inserire un nome");
-  //     nome.value.focus();
-  //     return false;
-  //  }
-
-  //  if ((isNaN()) || (km.value == ""))  {
-  //             alert("Devi inserire i chilometri percorsi, attenzione deve essere numerico!");
-  //             km.value = "";
-  //             km.focus();
-  //             return false;
-  //          }
 
 }
 
@@ -89,14 +50,12 @@ function() {
 const nascondi = document.getElementById("ticket").style.display = 'none';
 
  
-
- 
 submitButton.addEventListener('click', 
                          
     function() {
        
         document.getElementById("ticket").style.display = 'block';
-
+        this.value = this.value.toUpperCase();
     }
                          
 );
